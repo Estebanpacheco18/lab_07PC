@@ -51,7 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $descripcion_mision = validateInput($_POST['descripcion_mision']);
 
     // Store data in the database
-    $stmt = $pdo->prepare("INSERT INTO agentes (nombre, agente_id, departamento_id, numero_misiones, descripcion_mision) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO agentes (nombre, agente_id, departamento_id, numero_misiones, 
+    descripcion_mision) VALUES (?, ?, ?, ?, ?)");
     $stmt->execute([$nombre, $agente_id, $departamento_id, $numero_misiones, $descripcion_mision]);
 }
 ?>
